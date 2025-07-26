@@ -1,51 +1,169 @@
-# LLM Chatbot
+# 🧠 **CEREBROCHAIN – AI Chatbot on ICP**  
 
-The LLM Chatbot example demonstrates how an ICP smart contract can be used to interact with a large language model (LLM) to generate text. The user can input a prompt, and the smart contract will use the LLM to generate a response.
-The response is then returned to the user, and the user can submit some follow-up prompts to continue the conversation.
+![ICP](https://img.shields.io/badge/Internet%20Computer-%23E91E63.svg?&style=for-the-badge&logo=internet-computer&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-%23000000.svg?&style=for-the-badge&logo=rust&logoColor=white)
+![React](https://img.shields.io/badge/React-%2361DAFB.svg?&style=for-the-badge&logo=react&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)
+![Ollama](https://img.shields.io/badge/LLM-Ollama-00b300?style=for-the-badge&logo=OpenAI)
 
-This application's logic is written in [Rust](https://internetcomputer.org/docs/building-apps/developer-tools/cdks/rust/intro-to-rust), a primary programming language for developing canisters on ICP.
+---
 
-## Deploying from ICP Ninja
+## **📌 Table of Contents**
+- [About CerebroChain](#-about-cerebrochain)
+- [✨ Features](#-features)
+- [🚀 Quick Deployment (ICP Ninja)](#-quick-deployment-icp-ninja)
+- [🗂 Project Structure](#-project-structure)
+- [📊 System Architecture](#-system-architecture)
+- [ASCII Block Diagram](#-ascii-block-diagram)
+- [Cyberpunk Effect Diagram](#-cyberpunk-effect-diagram)
+- [📝 Conclusion](#-conclusion)
 
-When viewing this project in ICP Ninja, you can deploy it directly to the mainnet for free by clicking "Deploy" in the upper right corner. Open this project in ICP Ninja:
+---
 
-[![](https://icp.ninja/assets/open.svg)](https://icp.ninja/i?url=https://github.com/dfinity/examples/rust/llm_chatbot)
+## **🔹 About CerebroChain**
+**CerebroChain** is a next-generation **AI chatbot** powered by **Large Language Models (LLMs)**, running on **Internet Computer Protocol (ICP)** smart contracts for decentralized, secure, and fast AI conversations.
 
-## Project structure
+**Tech Stack:**  
+**Backend:** Rust (ICP Canister)  
+**Frontend:** React + TailwindCSS  
+**LLM Engine:** Ollama (LLaMA 3.1)
 
-The `/backend` folder contains the Rust smart contract:
+---
 
-- `Cargo.toml`, which defines the crate that will form the backend
-- `lib.rs`, which contains the actual smart contract, and exports its interface
+## **✨ Features**
+- **🤖 AI Conversations:** Uses **LLM** for natural, human-like replies.  
+- **⚡ Deployed on ICP:** Secure, decentralized smart contracts.  
+- **🛠 Local Development:** Compatible with **Ollama** for local testing.  
+- **🌐 Modern Web UI:** Built with **React** and optimized for performance.  
 
-The `/frontend` folder contains web assets for the application's user interface. The user interface is written using the React framework.
+---
 
-## Continue building locally
+## **🚀 Quick Deployment (ICP Ninja)**
+1. Open **ICP Ninja**.
+2. Click **“Deploy”** (top-right corner).
+3. Or open directly:  
+   [![Deploy CerebroChain](https://img.shields.io/badge/DEPLOY-NOW-FF1493?style=for-the-badge)](https://icp.ninja/i?url=https://github.com/dfinity/examples/rust/llm_chatbot)
 
-To migrate your ICP Ninja project off of the web browser and develop it locally, follow these steps.
-To open this project in ICP Ninja, click [here](https://icp.ninja/i?url=https://github.com/dfinity/examples/tree/master/rust/llm_chatbot).
+---
 
-### 1. Download your project from ICP Ninja using the 'Download files' button on the upper left corner under the pink ninja star icon.
+## **🗂 Project Structure**
 
-### 2. Setting up Ollama
+CerebroChain/
+├── backend/
+│ ├── Cargo.toml # Backend Rust canister configuration
+│ └── lib.rs # Core smart contract
+├── frontend/
+│ ├── index.html # Main entry point
+│ └── components/ # React components
+├── BUILD.md # Local build instructions
+└── README.md # Project documentation
 
-To be able to test the agent locally, you'll need a server for processing the agent's prompts. For that, we'll use `ollama`, which is a tool that can download and serve LLMs.
-See the documentation on the [Ollama website](https://ollama.com/) to install it. Once it's installed, run:
+---
 
-```
-ollama serve
-# Expected to start listening on port 11434
-```
+## **📊 System Architecture**
 
-The above command will start the Ollama server, so that it can process requests by the agent. Additionally, and in a separate window, run the following command to download the LLM that will be used by the agent:
++--------------------+
+| User |
+| (Sends Prompt) |
++---------+----------+
+|
+v
++--------------------+
+| User Interface |
+| (React Frontend) |
++---------+----------+
+|
+v
++--------------------+
+| ICP Smart Contract |
+| (Rust Canister) |
++---------+----------+
+|
+v
++--------------------+
+| LLM Engine |
+| (Ollama + LLaMA 3) |
++---------+----------+
+|
+v
++--------------------+
+| Response to User |
++--------------------+
 
-```
-ollama run llama3.1:8b
-```
 
-The above command will download an 8B parameter model, which is around 4GiB. Once the command executes and the model is loaded, you can terminate it. You won't need to do this step again.
+---
 
-### 3. Open the `BUILD.md` file for further instructions.
-# ICP_LLMChatbot
-# ICP_LLMChatbot
-# LLM_Chatbot
+## **ASCII Block Diagram**
+█████████████████████████████████████████████████
+█ █
+█ CEREBROCHAIN █
+█ AI CHATBOT ON ICP SMART CONTRACT █
+█ █
+█████████████████████████████████████████████████
+
+
+
+    ┌───────────────────────┐
+    │        USER           │
+    │   (Prompt Input)      │
+    └───────────┬───────────┘
+                │
+                ▼
+    ┌───────────────────────┐
+    │   REACT FRONTEND      │
+    │  (User Interface)     │
+    └───────────┬───────────┘
+                │
+                ▼
+    ┌───────────────────────┐
+    │ ICP SMART CONTRACT    │
+    │   (Rust Canister)     │
+    └───────────┬───────────┘
+                │
+                ▼
+    ┌───────────────────────┐
+    │   LLM ENGINE          │
+    │ (Ollama + LLaMA 3.1)  │
+    └───────────┬───────────┘
+                │
+                ▼
+    ┌───────────────────────┐
+    │    RESPONSE TO USER   │
+    │  (AI Generated Text)  │
+    └───────────────────────┘
+
+
+
+---
+
+## **Cyberpunk Effect Diagram**
+
+╔══════════════════════════════════════╗
+║ CEREBROCHAIN SYSTEM ║
+╚══════════════════════════════════════╝
+
+[ USER ] ───► [ FRONTEND (React UI) ]
+│
+▼
+[ ICP SMART CONTRACT ]
+│
+▼
+[ LLM ENGINE ]
+(Ollama + LLaMA 3.1)
+│
+▼
+[ RESPONSE ]
+
+
+---
+
+## **📝 Conclusion**
+**CerebroChain** merges the power of **LLMs** with **ICP smart contracts** to deliver **secure, decentralized AI interactions.**  
+
+- **Modular Design:** React-based frontend, Rust backend, and LLM engine.  
+- **Decentralization:** Trustless and tamper-proof architecture via ICP.  
+- **Scalability:** Powered by **Ollama + LLaMA 3.1** for low-latency local responses.  
+- **Modern UI/UX:** Built using **React, Rust, TailwindCSS.**
+
+---
+
